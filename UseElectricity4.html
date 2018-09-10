@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <title>Home</title>
+    <link rel="stylesheet" href="css/home.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <!-- <script type="text/javascript">
+        google.charts.load('current', { 'packages': ['corechart', 'bar'] });
+        google.charts.setOnLoadCallback(drawStuff);
+
+        function drawStuff() {
+
+            var button = document.getElementById('change-chart');
+            var chartDiv = document.getElementById('chart_div');
+
+            var data = google.visualization.arrayToDataTable([
+                ['Galaxy', 'Distance', 'Brightness'],
+                ['Canis Major Dwarf', 8000, 23.3],
+                ['Sagittarius Dwarf', 24000, 4.5],
+                ['Ursa Major II Dwarf', 30000, 14.3],
+                ['Lg. Magellanic Cloud', 50000, 0.9],
+                ['Bootes I', 60000, 13.1]
+            ]);
+
+            var materialOptions = {
+                width: 900,
+                chart: {
+                    title: 'Nearby galaxies',
+                    subtitle: 'distance on the left, brightness on the right'
+                },
+                series: {
+                    0: { axis: 'distance' }, // Bind series 0 to an axis named 'distance'.
+                    1: { axis: 'brightness' } // Bind series 1 to an axis named 'brightness'.
+                },
+                axes: {
+                    y: {
+                        distance: { label: 'parsecs' }, // Left y-axis.
+                        brightness: { side: 'right', label: 'apparent magnitude' } // Right y-axis.
+                    }
+                }
+            };
+
+            var classicOptions = {
+                width: 900,
+                series: {
+                    0: { targetAxisIndex: 0 },
+                    1: { targetAxisIndex: 1 }
+                },
+                title: 'Nearby galaxies - distance on the left, brightness on the right',
+                vAxes: {
+                    // Adds titles to each axis.
+                    0: { title: 'parsecs' },
+                    1: { title: 'apparent magnitude' }
+                }
+            };
+
+            function drawMaterialChart() {
+                var materialChart = new google.charts.Bar(chartDiv);
+                materialChart.draw(data, google.charts.Bar.convertOptions(materialOptions));
+                button.innerText = 'Change to Classic';
+                button.onclick = drawClassicChart;
+            }
+
+            function drawClassicChart() {
+                var classicChart = new google.visualization.ColumnChart(chartDiv);
+                classicChart.draw(data, classicOptions);
+                button.innerText = 'Change to Material';
+                button.onclick = drawMaterialChart;
+            }
+
+            drawMaterialChart();
+        };
+    </script> -->
+</head>
+
+<body>
+    <div class="container-fluid" id="Head">
+        <div class="class col-sm-12 ">
+            <div class="row justify-content-center">
+                <ul>
+                    <img src="images/Logo_Intregrate.png" width="90px" height="90px" alt="">
+                </ul>
+                <ul>
+                    <img src="images/lg_wu.png" width="80px" height="90px" alt="">
+                </ul>
+                <div>
+                    <ul>
+                        <h1>ระบบบันทึกหน่วยไฟฟ้าอัจฉริยะ </h1>
+                    </ul>
+                    <ul>
+                        <h5>(Smart energy monitoring system)</h2>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-dark bg-dark">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarSupportedContent"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item ">
+                    <a class="nav-link" href="home.html">ผังห้อง
+                        <span class="sr-only"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="UseElectricity3.html">การใช้ไฟฟ้า</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link disabled" href="UseElectricity4.html">วิเคราะห์การใช้พลังงาน</a>
+                </li>
+                <li class="nav-item ">
+                    <a class="nav-link disabled" href="Invoice5.html">ออกใบเเจ้งหนี้&ใบเสร็จ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="setting.html">จัดการหอพัก</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Log out</button>
+            </form>
+        </div>
+    </nav>
+    <!--
+  Extra small <576px   col
+  small > 576      px  col-sm
+  mediu, >= 768        col-md
+  Large >=992 px       com-lg
+  Extra Large >= 120px col-xl
+-->
+    <br>
+    <h3 align="center"> วิเคราะห์ค่าไฟฟ้า</h3>
+
+    <div class="container-fluid">
+        <div class="row justify-content-center">
+
+            <div class=" col-lg-5 col-md-5  col-sm-5 col-8 col-5  ">
+                <br>
+                <form name="form2" id="form1" action="" method="">
+                    <div class="form-group row">
+                        <label class="col-lg-5 col-sm-2 col-form-label">จำนวนการใช้ไฟฟ้าทั้งหมด (หน่วย)</label>
+                        <br>
+                        <br>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="CountUnit" placeholder="0">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-5 col-sm-2 col-form-label">รายจ่ายการไฟฟ้า (บาท)</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="UnitBuy" placeholder="0">
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-lg-5 col-sm-2 col-form-label">วันที่จ่าย</label>
+                        <div class="col-sm-10">
+                            <input type="date" class="form-control" id="DateBuy" placeholder="">
+                        </div>
+                        
+                    </div>
+
+
+
+
+                    <div class="form-group row">
+                        <div class="col-sm-10">
+                            <button type="submit" class="btn btn-primary">บันทึก</button>
+                        </div>
+                    </div>
+                </form>
+
+
+            </div>
+            <div class=" col-lg-6 col-md-8 col-sm-5 col-8 ">
+                <br><br><br>
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th scope="col">การใช้ไฟฟ้าของผู้เช่า(หน่วย)</th>
+                            <th scope="col">การใช้ไฟฟ้าของส่วนกลาง(หน่วย)</th>
+                            <th scope="col">การใช้ไฟฟ้าทั้งหมด(หน่วย)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>120</td>
+                            <td> 10</td>
+                            <td>130</td>
+                        </tr>
+
+                    </tbody>
+                </table>
+                <br><br>
+                <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">รายรับค่าไฟฟ้าจากผู้เช่า(บาท)</th>
+                                <th scope="col">รายจ่ายการไฟฟ้า(บาท)</th>
+                                <th scope="col">กำไร/ขาดทุน ค่าไฟฟ้า(บาท)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+    
+                            <tr>
+                                <td>960</td>
+                                <td>800</td>
+                                <td>160</td>
+                            </tr>
+    
+                        </tbody>
+                    </table>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
