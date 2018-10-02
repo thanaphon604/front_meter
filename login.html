@@ -15,7 +15,8 @@
       color: rgb(78, 4, 4);
     }
   </style>
-</head>  <!--
+</head>
+<!--
   Extra small <576px   col
   small > 576      px  col-sm
   mediu, >= 768        col-md
@@ -24,28 +25,70 @@
 -->
 
 <body>
-  
-    <div class="container" style="margin-top: 30px">
-      <div class="row justify-content-center">
-        <div class="col-12 col-md-8  ">
-          <div align="center">
-            <img src="images/Logo_Intregrate.png" width="40%" height="40%"  alt="">
-          </div>
-          <div class="form-group">
-            <p class="subject">ระบบบันทึกหน่วยไฟฟ้าอัจฉริยะ</p>
-            <label for="exampleDropdownFormEmail2">Username</label>
-            <input type="text" class="form-control" id="exampleDropdownFormEmail2" placeholder="Username">
-          </div>
-          <div class="form-group">
-            <label for="exampleDropdownFormPassword2">Password</label>
-            <input type="password" class="form-control" id="exampleDropdownFormPassword2" placeholder="Password">
-          </div>
-          <button type="submit" class="btn btn-primary" class="button-cnter" class="text-center">Sign in</button>
-          </form>
+
+  <div class="container" style="margin-top: 30px">
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-8  ">
+        <div align="center">
+          <img src="images/Logo_Intregrate.png" width="40%" height="40%" alt="">
         </div>
+        <p class="subject">ระบบบันทึกหน่วยไฟฟ้าอัจฉริยะ</p>
+
+
+        <form action="http://localhost:3000/signin" method="POST">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Username</label>
+            <input name="username" type="text" class="form-control" id="exampleInputUsername" placeholder="Enter Username">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Password</label>
+            <input name="password" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+          </div>
+          <div class="form-group form-check">
+
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+
       </div>
+
     </div>
-  
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+    crossorigin="anonymous"></script>
+  <script>
+    console.log('testttt')
+    $.getJSON("http://localhost:3000/getAdmin", function (data) {
+      //data contains full parsed JavaScript object of json 
+      console.log('data = ', data)
+      console.log('test' + data.username)
+    });
+
+    $(document).ready(function () {
+      // เมื่อเกิดเหตุการ submit form
+      $('#form1').submit(function () {
+
+        if (document.getElementById('username').value == "") {
+          alert('Please Input Username');
+          return false;
+        } else if (document.getElementById('password').value == "") {
+          alert('Please Input Password ');
+          return false;
+        }
+        var username = document.getElementById('username').value
+        var password = document.getElementById('password').value
+
+
+
+      });
+    })
+
+  </script>
+
+
+
+
+
 
 
 

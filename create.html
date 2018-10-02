@@ -31,30 +31,20 @@
             <div class="col-12 col-md-8  ">
                 <div align="center">
                     <img src="images/Logo_Intregrate.png" width="40%" height="40%" alt="">
-                   <h3>กรุณากรอกข้อมูลให้ครบถ้วนเพื่อทำการสร้าง Username เเละ Password</h3>
+                    <h3>กรุณากรอกข้อมูลให้ครบถ้วนเพื่อทำการสร้าง Username เเละ Password</h3>
                 </div>
-
-                <form class="form-horizontal" action='' method="POST">
+                <hr>
+                <form name="form1" id="form1" class="form-horizontal" action='' onsubmit="return false">
                     <fieldset>
                         <div id="legend">
                             <legend class=""></legend>
                         </div>
                         <div class="control-group">
-                             Username 
+
                             <label class="control-label" for="username">Username</label>
                             <div class="controls">
                                 <input type="text" id="username" name="username" placeholder="" class="input-xlarge">
-                             <!--   <p class="help-block">Username can contain any letters or numbers, without spaces</p>-->
-                            </div>
-                        </div>
-
-                        <div class="control-group">
-                            <!-- E-mail -->
-                            <label class="control-label" for="email">E-mail</label>
-                            <div class="controls">
-                                <input type="text" id="email" name="email" placeholder="" class="input-xlarge">
-                              <!-- -------------------------------------
-                              <p class="help-block">Please provide your E-mail</p>-->
+                                <!--   <p class="help-block">Username can contain any letters or numbers, without spaces</p>-->
                             </div>
                         </div>
 
@@ -63,7 +53,7 @@
                             <label class="control-label" for="password">Password</label>
                             <div class="controls">
                                 <input type="password" id="password" name="password" placeholder="" class="input-xlarge">
-                             <!--   <p class="help-block">Password should be at least 4 characters</p>-->
+                                <!--   <p class="help-block">Password should be at least 4 characters</p>-->
                             </div>
                         </div>
 
@@ -71,15 +61,16 @@
                             <!-- Password -->
                             <label class="control-label" for="password_confirm">Password (Confirm)</label>
                             <div class="controls">
-                                <input type="password" id="password_confirm" name="password_confirm" placeholder="" class="input-xlarge">
-                             <!--    <p class="help-block">Please confirm password</p>-->
+                                <input type="password" id="password_confirm" name="password_confirm" placeholder=""
+                                    class="input-xlarge">
+                                <!--    <p class="help-block">Please confirm password</p>-->
                             </div>
                         </div>
 
                         <div class="control-group">
                             <!-- Button -->
                             <div class="controls">
-                                <button class="btn btn-success">Register</button>
+                                <button class="btn btn-success" type="submit" value="Submit">Register</button>
                             </div>
                         </div>
                     </fieldset>
@@ -87,6 +78,67 @@
             </div>
         </div>
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script>
+        $(document).ready(function () {
+            // เมื่อเกิดเหตุการ submit form
+            $('#form1').submit(function () {
+                // alert('submit   ')
+                if (document.getElementById('username').value == "") {
+                    alert('Please Input Username');
+                    return false;
+                } else if (document.getElementById('password').value == "") {
+                    alert('Please Input Password ');
+                    return false;
+                } else if (document.getElementById('password_confirm').value == "") {
+                    alert('Please Input Confirm Password');
+                    return false;
+                } else if (document.getElementById('password').value != document.getElementById('password_confirm').value) {
+                    alert('The password does not match');
+                    return false;
+                }
+                var username = document.getElementById('username').value
+                var password = document.getElementById('password').value
+
+
+                var newAdmin = '{"username" :"' + username + '""password":"' + password + '"}'
+                var newAdmin = {
+                    username,password
+                }
+                console.log(newAdmin)
+                postData(newAdmin)
+                // console.log('newAdmin:', newAdmin)
+                // console.log('json: ', JSON.stringify({ newAdmin }))
+
+
+
+            });
+        })
+        function postData(newAdmin) {
+            var url = "http://localhost:3000/postAdmin";
+            console.log('===============')
+            console.log(newAdmin.username)
+            console.log(newAdmin.password)
+            console.log('===============')
+            // let res = $.post(url, { username: newAdmin.username, password: newAdmin.password }) 
+            // let res = $.post(url, { username: newAdmin.username, password: newAdmin.password },  function(data, status){
+            //     console.log('data:'+ data)
+            //     console.log('status'+ status)
+            // })
+
+            var xhr = new XMLHttpRequest();
+                xhr.open("POST", url, true);
+                xhr.setRequestHeader("Content-Type", "application/json");
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState === 4 && xhr.status === 200) {
+                        console.log('res is', xhr.responseText)
+                    }
+                };
+                var data = JSON.stringify({username: newAdmin.username, password: newAdmin.password});
+                xhr.send(data);
+        }
+    </script>
 
 
 

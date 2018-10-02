@@ -36,30 +36,30 @@
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="home.html">ผังห้อง
-                                <span class="sr-only"></span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="UseElectricity3.html">การใช้ไฟฟ้า</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="UseElectricity4.html">วิเคราะห์การใช้พลังงาน</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="Invoice5.html">ออกใบเเจ้งหนี้&ใบเสร็จ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="setting.html">จัดการหอพัก</a>
-                        </li>
-                    </ul>
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="home.html">ผังห้อง
+                        <span class="sr-only"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="UseElectricity3.html">การใช้ไฟฟ้า</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="UseElectricity4.html">วิเคราะห์การใช้พลังงาน</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="Invoice5.html">ออกใบเเจ้งหนี้&ใบเสร็จ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="setting.html">จัดการหอพัก</a>
+                </li>
+            </ul>
             <form class="form-inline my-2 my-lg-0">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Log out</button>
             </form>
@@ -80,7 +80,7 @@
                 <div align="center">
                     <img src="images/Logo_Intregrate.png" width="30%" height="40%" alt="">
                     <br>
-                   <h3>กรุณากรอกข้อมูลจำนวนห้องเเละชั้นในหอพักของคุณ</h3>
+                    <h3>กรุณากรอกข้อมูลจำนวนห้องเเละชั้นในหอพักของคุณ</h3>
                 </div>
                 <br>
                 <form name="form1" id="my-form" action="">
@@ -98,7 +98,7 @@
                             <button id="save" type="submit" class="btn btn-primary">บันทึก</button>
                         </div>
                     </div>
-                    
+
                 </form>
             </div>
 
@@ -107,43 +107,43 @@
             <script>
 
                 $(document).ready(function () {
-                    var htmlString= ''
+                    var htmlString = ''
                     console.log('running')
                     $('#inputfloor').on('input', function (e) {
                         htmlString = ''
                         var divPost = document.getElementById('divPost')
-                        divPost.innerHTML= ''
+                        divPost.innerHTML = ''
                         var input = $(this);
                         var val = input.val();
                         console.log(val)
                         for (i = 1; i <= val; i++) {
-                            htmlString += '<p>ชั้น' + (i) + '<input  id="'+"floor"+i+'" type="number" /> ห้อง</p>'
+                            htmlString += '<p>ชั้น' + (i) + '<input  id="' + "floor" + i + '" type="number" /> ห้อง</p>'
                         }
                         divPost.insertAdjacentHTML('beforeend', htmlString);
                     });
-                    $(document).on('submit', '#my-form', function() {
+                    $(document).on('submit', '#my-form', function () {
                         let obj = []
                         let f = $('#inputfloor').val()
                         //let f = $('#inputfloor').val()
                         console.log('all floor:', f)
-                        for(let i=1;i<=f;i++) {
-                            let room = $('#floor'+i).val()
-                            for(let j=1;j<=room;j++) {
+                        for (let i = 1; i <= f; i++) {
+                            let room = $('#floor' + i).val()
+                            for (let j = 1; j <= room; j++) {
                                 obj.push({
                                     floor: i,
                                     room: j
                                 })
                             }
-                            console.log('floor',i,'is have :', room)
+                            console.log('floor', i, 'is have :', room)
                         }
                         console.log('obj:', obj)
-                        console.log('json: ', JSON.stringify({obj}))
+                        console.log('json: ', JSON.stringify({ obj }))
                         //api post obj to db
                         postData(obj)
                         //move new page
-                        window.location.href='home.html';
+                        window.location.href = 'home.html';
                         return false;
-                     });
+                    });
 
                 });
 
@@ -158,15 +158,15 @@
 
                     request.onload = function () {
                         var status = request.status;
-                        var data = request.responseText; 
+                        var data = request.responseText;
                     }
 
                     request.open(method, url, shouldBeAsync);
 
                     request.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
-                    request.send(JSON.stringify({obj}));
+                    request.send(JSON.stringify({ obj }));
                 }
-                
+
             </script>
 
 

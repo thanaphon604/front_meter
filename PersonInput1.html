@@ -33,30 +33,30 @@
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light navbar navbar-dark bg-dark">
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarSupportedContent"
-            aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="home.html">ผังห้อง
-                                <span class="sr-only"></span>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="UseElectricity3.html">การใช้ไฟฟ้า</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="UseElectricity4.html">วิเคราะห์การใช้พลังงาน</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="Invoice5.html">ออกใบเเจ้งหนี้&ใบเสร็จ</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" href="setting.html">จัดการหอพัก</a>
-                        </li>
-                    </ul>
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="home.html">ผังห้อง
+                        <span class="sr-only"></span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="UseElectricity3.html">การใช้ไฟฟ้า</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="UseElectricity4.html">วิเคราะห์การใช้พลังงาน</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="Invoice5.html">ออกใบเเจ้งหนี้&ใบเสร็จ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="setting.html">จัดการหอพัก</a>
+                </li>
+            </ul>
             <form class="form-inline my-2 my-lg-0">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Log out</button>
             </form>
@@ -82,7 +82,8 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">เลขบัตรประจำตัวประชาชน</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="personID" placeholder="เลขบัตรประจำตัวประชาชน" onkeyup="autoTab2(this,1)">
+                            <input type="text" class="form-control" id="personID" placeholder="เลขบัตรประจำตัวประชาชน"
+                                onkeyup="autoTab2(this,1)">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -133,7 +134,8 @@
                     <div class="form-group row">
                         <label class="col-sm-2 col-form-label">หมายเลขโทรศัพท์</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="phoneNumber" placeholder="หมายเลขโทรศัพท์" onkeyup="autoTab2(this,2)">
+                            <input type="text" class="form-control" id="phoneNumber" placeholder="หมายเลขโทรศัพท์"
+                                onkeyup="autoTab2(this,2)">
                         </div>
                     </div>
                     <div class="form-group row">
@@ -205,12 +207,12 @@
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">ลำดับที่</th>
-                                <th scope="col">ชื่อ</th>
-                                    <th scope="col">นามสกุล</th>
-                                        <th scope="col">บัตรประชาชน</th>
-                                            <th scope="col">เบอร์โทรศัพท์</th>
-                                                <th scope="col">เเก้ไขข้อมูล</th>
-                                                    <th scope="col">ลบข้อมูล</th>
+                            <th scope="col">ชื่อ</th>
+                            <th scope="col">นามสกุล</th>
+                            <th scope="col">บัตรประชาชน</th>
+                            <th scope="col">เบอร์โทรศัพท์</th>
+                            <th scope="col">เเก้ไขข้อมูล</th>
+                            <th scope="col">ลบข้อมูล</th>
                         </tr>
                     </thead>
                     <tbody id="tablePos">
@@ -222,16 +224,17 @@
         </div>
 
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
     <script>
         //ข้อมูลห้อง
         var url_string = window.location.href
         var url = new URL(url_string);
-        
+
         let room = url.searchParams.get("room");
         let floor = url.searchParams.get("floor");
         let build = url.searchParams.get("build");
-        
+
         console.log(room)
         console.log(floor)
         console.log(build)
@@ -239,12 +242,12 @@
         var ourRequest = new XMLHttpRequest();
         var tablePos = document.getElementById('tablePos')
         var htmlString = '';
-        ourRequest.open('GET', 'http://localhost:3000/getuser/'+room+'/'+floor+'/'+build);
+        ourRequest.open('GET', 'http://localhost:3000/getuser/' + room + '/' + floor + '/' + build);
         ourRequest.onload = function () {
             var ourData = JSON.parse(ourRequest.responseText);
             console.log(ourData[0])//data from get
             renderHTML(ourData);
-            console.log('test'+ourData)
+            console.log('test' + ourData)
             makeClick();
         }
         ourRequest.send();
@@ -275,50 +278,50 @@
         $(document).ready(function () {
             // เมื่อเกิดเหตุการ submit form
             $('#form1').submit(function () {
-               
 
-               
-                 if (document.getElementById('personID').value == "") {
-                     alert('PLEASE INPUT Person ID');
-                     return false;
-                 } else if (document.getElementById('firstName').value == "") {
-                     alert('PLEASE INPUT FirstNmae');
-                     return false;
-                 } else if (document.getElementById('lastName').value == "") {
-                     alert('PLEASE INPUT LastNmae');
-                     return false;
-                 } else if (document.getElementById('birthday').value == "") {
-                     alert('PLEASE INPUT birthday');
-                     return false;
-                 }else if (document.getElementById('radio1').checked == true && document.getElementById('radio2').checked == false) {
+
+
+                if (document.getElementById('personID').value == "") {
+                    alert('PLEASE INPUT Person ID');
+                    return false;
+                } else if (document.getElementById('firstName').value == "") {
+                    alert('PLEASE INPUT FirstNmae');
+                    return false;
+                } else if (document.getElementById('lastName').value == "") {
+                    alert('PLEASE INPUT LastNmae');
+                    return false;
+                } else if (document.getElementById('birthday').value == "") {
+                    alert('PLEASE INPUT birthday');
+                    return false;
+                } else if (document.getElementById('radio1').checked == true && document.getElementById('radio2').checked == false) {
                     var input5 = document.getElementById('radio1').value;
-                   
+
                     return false;
-                }else if(document.getElementById('radio1').checked == false && document.getElementById('radio2').checked == true){
+                } else if (document.getElementById('radio1').checked == false && document.getElementById('radio2').checked == true) {
                     var input5 = document.getElementById('radio2').value;
-                    
+
                     return false;
-                }else if(document.getElementById('radio1').checked == false && document.getElementById('radio2').checked == false){
+                } else if (document.getElementById('radio1').checked == false && document.getElementById('radio2').checked == false) {
                     alert('PLEASE CHECK radio1 OR radio2  TRUE');
-                }else if (document.getElementById('address').value == "") {
-                     alert('PLEASE INPUT address');
-                     return false;
-                 }else if(document.getElementById('phoneNumber').value == ""){
-                     alert('PLEASE INPUT phoneNumber');
-                     return false;
-                 }else if(document.getElementById('dataCopy').value == ""){
-                     alert('PLEASE INPUT  Contract date');
-                     return false;
-                 }
-                 
-                 var input1 = document.getElementById("personID").value;
-                 var input2 = document.getElementById("firstName").value;
-                 var input3 = document.getElementById("lastName").value;
-                 var input4 = document.getElementById("birthday").value;
-                 var input6 = document.getElementById("address").value;
-                 var input7 = document.getElementById(" phoneNumber").value;
-                 var input8 = document.getElementById("dateCopy").value;
-              
+                } else if (document.getElementById('address').value == "") {
+                    alert('PLEASE INPUT address');
+                    return false;
+                } else if (document.getElementById('phoneNumber').value == "") {
+                    alert('PLEASE INPUT phoneNumber');
+                    return false;
+                } else if (document.getElementById('dataCopy').value == "") {
+                    alert('PLEASE INPUT  Contract date');
+                    return false;
+                }
+
+                var input1 = document.getElementById("personID").value;
+                var input2 = document.getElementById("firstName").value;
+                var input3 = document.getElementById("lastName").value;
+                var input4 = document.getElementById("birthday").value;
+                var input6 = document.getElementById("address").value;
+                var input7 = document.getElementById(" phoneNumber").value;
+                var input8 = document.getElementById("dateCopy").value;
+
             });
         })
 
