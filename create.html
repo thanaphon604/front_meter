@@ -70,31 +70,28 @@
                         <div class="control-group">
                             <label class="control-label" for="fname">First Name</label>
                             <div class="controls">
-                                <input type="text" id="fname" name="fname" placeholder=""
-                                    class="input-xlarge">
+                                <input type="text" id="fname" name="fname" placeholder="" class="input-xlarge">
                             </div>
                         </div>
 
                         <div class="control-group">
                             <label class="control-label" for="lname">Last Name</label>
                             <div class="controls">
-                                <input type="text" id="lname" name="lname" placeholder=""
-                                    class="input-xlarge">
+                                <input type="text" id="lname" name="lname" placeholder="" class="input-xlarge">
                             </div>
                         </div>
 
                         <div class="control-group">
                             <label class="control-label" for="phone">Phone number</label>
                             <div class="controls">
-                                <input type="text" id="phone" name="phone" placeholder=""
-                                    class="input-xlarge">
+                                <input type="text" id="phone" name="phone" placeholder="" class="input-xlarge">
                             </div>
                         </div>
 
                         <div class="control-group">
                             <!-- Button -->
                             <div class="controls">
-                                <button id="reg" class="btn btn-success" type="button" >Register</button>
+                                <button id="reg" class="btn btn-success" type="button">Register</button>
                             </div>
                         </div>
                     </fieldset>
@@ -131,7 +128,7 @@
 
                 //var newAdmin = '{"username" :"' + username + '""password":"' + password + '"}'
                 var newAdmin = {
-                    username,password,fname,lname,phone
+                    username, password, fname, lname, phone
                 }
                 console.log(newAdmin)
                 postData(newAdmin)
@@ -158,19 +155,20 @@
             // })
 
             var xhr = new XMLHttpRequest();
-                xhr.open("POST", url, true);
-                xhr.setRequestHeader("Content-Type", "application/json");
-                xhr.onreadystatechange = function () {
-                    if (xhr.readyState === 4 && xhr.status === 200) {
-                        console.log('res is', xhr.responseText)
-                        // if success go login page
-                        window.location.href = 'login.html'
-                    }else {
-                        //alert('can not create user! Pls try again.')
-                    }
-                };
-                var data = JSON.stringify({username: newAdmin.username, password: newAdmin.password, fname: newAdmin.fname, lname: newAdmin.lname, phone: newAdmin.phone});
-                xhr.send(data);
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    console.log('res is', xhr.responseText)
+                    // if success go login page
+                    
+                    
+                } else {
+                    //alert('can not create user! Pls try again.')
+                }
+            };
+            var data = JSON.stringify({ username: newAdmin.username, password: newAdmin.password, fname: newAdmin.fname, lname: newAdmin.lname, phone: newAdmin.phone });
+            xhr.send(data);
         }
     </script>
 
