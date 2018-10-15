@@ -161,13 +161,14 @@
                 if (xhr.readyState === 4 && xhr.status === 200) {
                     console.log('res is', xhr.responseText)
                     // if success go login page
-                    
+                    window.location.reload(true);
                     
                 } else {
                     //alert('can not create user! Pls try again.')
                 }
             };
-            var data = JSON.stringify({ username: newAdmin.username, password: newAdmin.password, fname: newAdmin.fname, lname: newAdmin.lname, phone: newAdmin.phone });
+            var data = JSON.stringify({ username: newAdmin.username, password: newAdmin.password, fname: newAdmin.fname,
+              lname: newAdmin.lname, phone: newAdmin.phone });
             xhr.send(data);
         }
     </script>
