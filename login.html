@@ -35,7 +35,7 @@
         <p class="subject">ระบบบันทึกหน่วยไฟฟ้าอัจฉริยะ</p>
 
 
-        <form action="http://localhost:3000/signin" method="POST">
+        <form action="http://localhost:3000/signin" onsubmit="SubMit()" method="POST">
           <div class="form-group">
             <label for="exampleInputEmail1">Username</label>
             <input required name="username" type="text" class="form-control" id="exampleInputUsername" placeholder="Enter Username">
@@ -48,6 +48,7 @@
 
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
+          <!-- <button type="button" onclick="SubMit()" class="btn btn-primary">Submit</button> -->
         </form>
 
       </div>
@@ -56,7 +57,16 @@
   </div>
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
     crossorigin="anonymous"></script>
-  <script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script>
+    function SubMit() {
+      localStorage.setItem("username", "test");
+      localStorage.username = "Smith";
+      document.cookie = "username=John Doe";
+      console.log('cookie', document.cookie)
+      //$.cookie('name','123456');
+      // alert('test:'+localStorage.getItem('username'))
+    }
     console.log('testttt')
     $.getJSON("http://localhost:3000/getAdmin", function (data) {
       //data contains full parsed JavaScript object of json 

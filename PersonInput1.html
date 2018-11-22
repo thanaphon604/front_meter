@@ -243,6 +243,7 @@
         var tablePos = document.getElementById('tablePos')
         var htmlString = '';
         ourRequest.open('GET', 'http://localhost:3000/getuser/' + room + '/' + floor + '/' + build);
+        
         ourRequest.onload = function () {
             var ourData = JSON.parse(ourRequest.responseText);
             console.log(ourData[0])//data from get
