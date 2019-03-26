@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-3">
+            <p class="h4">การใช้ไฟฟ้าทั้งหมด</p>
+        </div>
+        <div class="col-2">
+            <p></p>
+        </div>
+        <div class="col-1">
+            <p>หน่วย</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <p class="h4">การใช้ไฟฟ้าของผู้เช่า</p>
+        </div>
+        <div class="col-2">
+            <p></p>
+        </div>
+        <div class="col-1">
+            <p>หน่วย</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <p class="h4">การใช้ไฟฟ้าของส่วนกลาง</p>
+        </div>
+        <div class="col-2">
+            <p></p>
+        </div>
+        <div class="col-1">
+            <p>หน่วย</p>
+        </div>
+    </div>
+    <input type="date" type="" id="start" name="start" min="" value="">
+    <div class="row">
+        <div class="col">
+            <h3 id="ShowMonth"></h3>
+        </div>
+        <div class="col">
+            <h3 id="ShowYear"></h3>
+        </div>
+
+    </div>
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script>
+
+        var now = new Date()
+        console.log("Current Time is: " + now);
+        var currentYear = now.getFullYear()
+        console.log("Current year is: " + currentYear);
+        var month = now.getMonth() + 1
+        console.log("Current month is: " + month);
+        document.getElementById("start").innerHTML = currentYear
+        if (month == 1) {
+            document.getElementById("ShowMonth").innerHTML = 'มกราคม'
+        } else if (month == 2) {
+            document.getElementById("ShowMonth").innerHTML = 'กุมภาพันธ์'
+        } else if (month == 3) {
+            document.getElementById("ShowMonth").innerHTML = 'มีนาคม'
+        } else if (month == 4) {
+            document.getElementById("ShowMonth").innerHTML = 'เมษายน'
+        } else if (month == 5) {
+            document.getElementById("ShowMonth").innerHTML = 'พฤษภาคม'
+        } else if (month == 6) {
+            document.getElementById("ShowMonth").innerHTML = 'มิถุนายน'
+        } else if (month == 7) {
+            document.getElementById("ShowMonth").innerHTML = 'กรกฎาคม'
+        } else if (month == 8) {
+            document.getElementById("ShowMonth").innerHTML = 'สิงหาคม'
+        } else if (month == 9) {
+            document.getElementById("ShowMonth").innerHTML = 'กันยายน'
+        } else if (month == 10) {
+            document.getElementById("ShowMonth").innerHTML = 'ตุลาคม '
+        } else if (month == 11) {
+            document.getElementById("ShowMonth").innerHTML = 'พฤศจิกายน'
+        } else if (month == 12) {
+            document.getElementById("ShowMonth").innerHTML = 'ธันวาคม'
+        }
+        document.getElementById("ShowYear").innerHTML = currentYear
+
+        $(document).ready(function () {
+
+
+        })
+
+
+    </script>
+
+
+</body>
+
+
+
+</html>

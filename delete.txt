@@ -1,0 +1,32 @@
+ let newUser = new Userdelete({
+       let BuildingNameInput = req.body.BuildingName,
+    let roomNumber = req.body.roomNumber,
+    let personID = req.body.personID,
+    let firstName = req.body.firstName,
+    let lastName = req.body.lastName,
+    let birthday = req.body.birthday,
+    let address = req.body.address,
+    let phoneNumber = req.body.phoneNumber,
+    let License = req.body.License,
+    })
+    newUser.save().then((d) => {
+        res.send(d)
+    }, (e) => {
+        console.log(e)
+        res.status(400).send(e)
+    })
+.............................
+  let newBuilding = new Building({
+        floor: req.body.floor,
+        adminAllow: req.body.adminAllow,
+        BuildingName: req.body.BuildingName,
+        UnitMeter: req.body.UnitMeter,
+        BuildingPhone: req.body.BuildingPhone,
+        BuildingEmail: req.body.BuildingEmail,
+    })
+    newBuilding.save().then((d) => {
+        res.send(d)
+    }, (e) => {
+        console.log(e)
+        res.status(400).send(e)
+    })

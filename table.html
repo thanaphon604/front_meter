@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+        crossorigin="anonymous">
+</head>
+
+<body>
+    <div id="education-groupboxwrapper">
+        <!-- groupbox 1 -->
+        <div class="education-groupbox">
+            <div class=" col-3">
+                <label for="email">Bölüm</label>
+                <input type="text" name="email" value="test1" />
+            </div>
+            <div class=" col-3">
+                <label for="email">Okul Adı</label>
+                <input type="text" name="email" value="test2" />
+            </div>
+            <div class=" col-3">
+                <label for="email">Bölüm</label>
+                <input type="text" name="email" value="test3" />
+            </div>
+            <div class=" col-3">
+                <label for="email">Bölüm</label>
+                <input type="text" name="email" value="test4" />
+            </div>
+        </div>
+        <!-- groupbox 2 -->
+        <div class="education-groupbox">
+            <div class=" col-3">
+                <label for="email">Bölüm</label>
+                <input type="text" name="email" value="test111" />
+            </div>
+            <div class=" col-3">
+                <label for="email">Okul Adı</label>
+                <input type="text" name="email" value="test222" />
+            </div>
+            <div class=" col-3">
+                <label for="email">Bölüm</label>
+                <input type="text" name="email" value="test333" />
+            </div>
+            <div class=" col-3">
+                <label for="email">Bölüm</label>
+                <input type="text" name="email" value="test444" />
+            </div>
+        </div>
+    </div>
+    <hr>
+    <input type="date" type="" id="start" name="start" min="" value="">
+    <p>bg</p>
+    <p id="demo"></p>
+    <hr>
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+
+                <th scope="col" style="background-color: gray">หมายเลขห้อง</th>
+                <th scope="col" style="background-color: gray">สถานะห้อง</th>
+                <th scope="col" style="background-color: gray">เลขมิเตอร์ก่อนหน้า</th>
+                <th scope="col" style="background-color: gray">เลขมิเตอร์ปัจจุบัน</th>
+                <th scope="col" style="background-color: gray">หน่วยที่ใช้</th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+
+            <tr>
+                <td scope="row"> 30</td>
+                <td scope="row"> 30</td>
+                <td scope="row"> 30</td>
+                <td scope="row"> 30</td>
+                <td scope="row"> 30</td>
+
+
+            </tr>
+
+        </tbody>
+    </table>
+    <input type="text" name="date" id="date" value="?=date('Y-m-d H:i:s')?" />
+
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <script>
+        var currentTime = new Date()
+        var month = currentTime.getMonth()
+        console.log(month)
+        console.log("ssssss")
+        var now = new Date()
+        console.log("Current Time is: " + now);
+
+        // getFullYear function will give current year 
+        var currentYear = now.getFullYear()
+        console.log("Current year is: " + currentYear);
+
+        // getYear will give you the years after 1990 i.e currentYear-1990
+        var year = now.getYear()
+        console.log("Current year is: " + year);
+
+        // getMonth gives the month value but months starts from 0
+        // add 1 to get actual month value 
+        var month = now.getMonth() + 1
+        console.log("Current month is: " + month);
+
+        // getDate gives the date value
+        var day = now.getDate()
+        console.log("Today's day is: " + day);
+        document.getElementById("start").innerHTML = currentYear
+        $('#select_all').on('click', function () {
+            console.log("llllllsssss")
+            if (this.checked) {
+                $('.checkbox').each(function () {
+                    this.checked = true;
+                });
+            } else {
+                $('.checkbox').each(function () {
+                    this.checked = false;
+                });
+            }
+        });
+
+        $('.checkbox').on('click', function () {
+            if ($('.checkbox:checked').length == $('.checkbox').length) {
+                $('#select_all').prop('checked', true);
+            } else {
+                $('#select_all').prop('checked', false);
+            }
+        });
+
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'AW-873201031');
+
+        //.........
+        var eduarray = [];
+        $('.education-groupbox').each(function (index, el) {
+            var _this = $(this);
+            eduarray[index] = [];
+            _this.find('input').each(function (key, v) {
+                eduarray[index].push(v.value);
+            });
+
+        });
+
+        console.log('eduarray[0] -->' + eduarray[0]);
+        console.log('eduarray[1] -->' + eduarray[1]);
+        console.log('eduarray    -->' + eduarray);
+    </script>
+
+
+</body>
+
+
+
+</html>
